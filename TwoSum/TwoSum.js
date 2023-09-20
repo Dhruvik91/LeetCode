@@ -16,40 +16,34 @@ You can return the answer in any order. */
 
 let twoSum = function (nums, target) {
 
-    let add = 0;
-    let arr = [];
+    let finalAnswer = [];
 
     for (let i = 0; i < nums.length; i++) {
-        add = add + nums[i];
-        console.log(add);
 
-        if (!arr.includes(i)) {
-            console.log("HI====", arr.push(nums.indexOf(nums[i])) - 1);
+        for (let j = 0; j < nums.length; j++) {
 
-            if (add > target && arr.length > 2) {
-                arr.pop();
-                add = add - nums[i - 1];
-                /* if (arr.length > 2) {*/
+            console.log("X!");
 
-                if (add === target && arr.length > 2) {
-                    arr.pop();
-                    console.log("HI==========", arr.push(nums.indexOf(nums[i])));
-                    
-                    return arr;
+            let sum = 0;
 
-                    
-                } else {
+            sum = nums[i] + nums[j];
 
-                    return arr;
+            console.log(`The sum of ${nums[i]} and ${nums[j]}`, sum);
 
-                }
+            if (target == sum && (i !== j)) {
+
+                console.log("x");
+
+                finalAnswer.push(i, j);
+
+                return finalAnswer;
             }
+
         }
-
     }
-
+    
 };
 
-let nums = [3, 2, 4], target = 7;
+let nums = [3, 3], target = 6;
 
 console.log(twoSum(nums, target));
