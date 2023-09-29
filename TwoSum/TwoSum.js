@@ -22,17 +22,11 @@ let twoSum = function (nums, target) {
 
         for (let j = 0; j < nums.length; j++) {
 
-            console.log("X!");
-
             let sum = 0;
 
             sum = nums[i] + nums[j];
 
-            console.log(`The sum of ${nums[i]} and ${nums[j]}`, sum);
-
             if (target == sum && (i !== j)) {
-
-                console.log("x");
 
                 finalAnswer.push(i, j);
 
