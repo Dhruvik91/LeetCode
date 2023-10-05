@@ -18,7 +18,7 @@ Output: [0] */
  */
 
 
-var moveZeroes = function (nums) {
+ export var moveZeroes = function (nums) {
 
     nums.forEach((item) => {
     
