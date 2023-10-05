@@ -1,34 +1,36 @@
-/* You are given an array arr where arr[i] is the price of a given stock on the ith day.
-
-You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
-
-Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0 */
-
-
-
-/* Input: arr = [7,1,5,3,6,4]
-Output: 5
-Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5
-
-Example 2:
-
-Input: arr = [7,6,4,3,1]
-Output: 0  */
-
-
 /**
- * @param {number[]} arr
+ * @param {number[]} prices
  * @return {number}
  */
-
 var maxProfit = function (arr) {
 
-    
+    let profit = 0;
 
-}
+    let max_Profit = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+
+        for (let j = i + 1; j < arr.length; j++) {
+
+            profit = arr[j] - arr[i];
+
+            if (profit > 0) {
+
+                if (profit > max_Profit) {
+
+                    max_Profit = profit;
+                }
+            }
+
+        }
+    }
+
+    return max_Profit;
 
 
+};
 
-const arra = [7, 1, 5, 3, 6, 4];
 
-console.log(maxProfit(arra));
+let array = [5, 7, 8, 0];
+
+console.log(maxProfit(array));
