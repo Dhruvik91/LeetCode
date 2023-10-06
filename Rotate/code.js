@@ -42,7 +42,7 @@ var rotate = function (arr) {
 
         for (let i = 0; i < y - x; i++) {
 
-            let temp = arr[x][x + i];
+            let temp = arr[x][x + i];      
             arr[x][x + i] = arr[y - i][x];
             arr[y - i][x] = arr[y][y - i];
             arr[y][y - i] = arr[x + i][y];
