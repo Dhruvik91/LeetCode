@@ -29,7 +29,7 @@ Output: [1,0]
 Explanation: No operation can be applied, we just shift the 0 to the end. */
 
 
-// import { moveZeroes } from "../Zero/code";
+//  import { moveZeroes } from "../Zero/code";
 
 
 /**
@@ -37,16 +37,35 @@ Explanation: No operation can be applied, we just shift the 0 to the end. */
  * @return {number[]}
  */
 
-var applyOperations = function(nums) {
-    
-    nums.forEach((item) => {
-        
+var applyOperations = function (nums) {
 
-    console.log(item);
+    for (let i = 0; i < nums.length; i++) {
+
+        if (nums[i] == nums[i + 1]) {
+
+            nums[i] *= 2;
+            nums[i + 1] = 0;
+        }
+        else {
+            continue;
+        }
+    }
+
+    nums.forEach((item) => {
+    
+        if (item === 0) {
+
+            nums.splice(nums.indexOf(item), 1);
+
+            nums.push(0);
+        }
+        
     })
+
+    return nums;
 };
 
 
-let nums = [1,2,2,1,1,0];
+let nums = [1, 2, 2, 1, 1, 0];
 
 console.log(applyOperations(nums));
