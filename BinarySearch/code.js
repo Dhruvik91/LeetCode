@@ -28,25 +28,29 @@ Output: [-1,-1] */
 
 var searchRange = function (nums, target) {
 
-    let map = new Map();
+    let start = 0;
+    let end = nums.length - 1;
 
-    for (let i = 0; i < nums.length; i++) {
+    while (start <= end) {
+        let mid = Math.floor((start + end) / 2)
 
+        if (nums[mid] == target) {
 
-        if (target == nums[i]) {
-
-            map.set(i, target);
-
-            console.log(i);
+            return mid
+        }
+        else if (nums[mid] > target) {
+            end = mid - 1
+        }
+        else if (nums[mid] < target) {
+            start = mid + 1;
         }
 
     }
-
-    return Array.from(map.keys()).length !== 0 ? Array.from(map.keys()) : [-1, -1];
+    return false;
 
 };
 
 
-let arr = [1, 2, 3, 4, 5, 7, 5];
+let arr = [1, 2, 3, 4, 5, 7];
 
-console.log(searchRange(arr, 5));
+console.log(searchRange(arr, 6));
