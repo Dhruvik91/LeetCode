@@ -61,7 +61,7 @@ var rotate = function (arr) {
 
 
 const arr =
-    [
+[
         [1, 2, 3, 20],
         [4, 5, 6, 21],
         [7, 8, 9, 22],
