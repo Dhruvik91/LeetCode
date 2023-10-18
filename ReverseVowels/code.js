@@ -50,7 +50,6 @@ var reverseVowels = function (s) {
     console.log(string);
 };
 
-
 const s = "aA";
 
 (reverseVowels(s));
